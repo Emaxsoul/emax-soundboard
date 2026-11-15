@@ -23,6 +23,21 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    // Firma esplicita anche v1 per migliorare la compatibilità
+    // con i programmi di installazione di alcuni dispositivi Xiaomi/MIUI.
+    buildTypes {
+        getByName("debug") {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+
+    signingConfigs {
+        getByName("debug") {
+            enableV1Signing = true
+            enableV2Signing = true
+        }
+    }
 }
 
 dependencies {
