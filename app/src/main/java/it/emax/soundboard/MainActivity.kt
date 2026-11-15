@@ -1,6 +1,5 @@
 package it.emax.soundboard
 
-import android.app.Activity
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.net.Uri
@@ -13,11 +12,12 @@ import android.widget.GridLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
 import java.io.File
 import java.io.FileOutputStream
 
-class MainActivity : Activity() {
+class MainActivity : ComponentActivity() {
     private val padCount = 16
     private val bankCount = 8
     private var bank = 0
